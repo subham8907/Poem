@@ -4,9 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Lines of Stone</title>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Yatra+One&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;1,7..72,400&display=swap" rel="stylesheet">
+
 <style>
   :root {
     --stone: #DEDAD3;
@@ -16,10 +18,10 @@
     --marigold: #C98A0C;
     --chisel-light: rgba(255,255,255,.75);
     --chisel-dark: rgba(0,0,0,.28);
+
     box-sizing: border-box;
-    padding-top: env(safe-area-inset-top, 0px);
-    padding-bottom: env(safe-area-inset-bottom, 0px);
   }
+
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
       --stone: #26272C;
@@ -31,6 +33,7 @@
       --chisel-dark: rgba(0,0,0,.7);
     }
   }
+
   :root[data-theme="dark"] {
     --stone: #26272C;
     --stone-deep: #1D1E22;
@@ -40,54 +43,109 @@
     --chisel-light: rgba(255,255,255,.08);
     --chisel-dark: rgba(0,0,0,.7);
   }
-  *, *::before, *::after { box-sizing: inherit; }
-  html { scroll-padding-top: env(safe-area-inset-top, 0px); }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: inherit;
+  }
+
+  html {
+    scroll-padding-top: env(safe-area-inset-top, 0px);
+  }
+
   body {
     margin: 0;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
     background: var(--stone);
     color: var(--ink);
     font-family: "Literata", Georgia, "Times New Roman", serif;
     font-size: 1.125rem;
     line-height: 1.75;
   }
+
   main {
     max-width: 38rem;
     margin: 0 auto;
     padding: 4rem 1.5rem 5rem;
   }
+
   .poem + .poem {
     margin-top: 6rem;
     padding-top: 4rem;
     border-top: 1px solid var(--stone-deep);
   }
-  h1, h2 {
+
+  h1,
+  h2 {
     font-family: "Yatra One", "Literata", Georgia, serif;
     font-weight: 400;
     line-height: 1.15;
     margin: 0 0 2rem;
     color: var(--stone-deep);
-    /* engraved into stone */
-    text-shadow: -1px -1px 0 var(--chisel-dark), 1px 1px 0 var(--chisel-light);
+
+    /* Engraved into stone */
+    text-shadow:
+      -1px -1px 0 var(--chisel-dark),
+       1px  1px 0 var(--chisel-light);
   }
-  h1 { font-size: clamp(3rem, 14vw, 5.5rem); }
-  h2 { font-size: clamp(2rem, 8vw, 3rem); }
-  .verse p { margin: 0 0 1.4rem; }
-  .verse span { display: block; }
-  .verse span:nth-child(even) { padding-left: 1.5rem; }
-  .subtitle { font-style: italic; color: var(--ink-soft); margin: -1rem 0 4rem; }
-  .collection-title { margin-bottom: 1.5rem; }
-  .closing span:last-child { color: var(--marigold); }
+
+  h1 {
+    font-size: clamp(3rem, 14vw, 5.5rem);
+  }
+
+  h2 {
+    font-size: clamp(2rem, 8vw, 3rem);
+  }
+
+  .verse p {
+    margin: 0 0 1.4rem;
+  }
+
+  .verse span {
+    display: block;
+  }
+
+  .verse span:nth-child(even) {
+    padding-left: 1.5rem;
+  }
+
+  .subtitle {
+    font-style: italic;
+    color: var(--ink-soft);
+    margin: -1rem 0 4rem;
+  }
+
+  .collection-title {
+    margin-bottom: 1.5rem;
+  }
+
+  .closing span:last-child {
+    color: var(--marigold);
+  }
+
   .ember {
     color: var(--marigold);
     animation: ember 4s ease-in-out infinite;
   }
+
   @keyframes ember {
-    0%, 100% { text-shadow: 0 0 0 transparent; }
-    50% { text-shadow: 0 0 18px var(--marigold); }
+    0%, 100% {
+      text-shadow: 0 0 0 transparent;
+    }
+
+    50% {
+      text-shadow: 0 0 18px var(--marigold);
+    }
   }
+
   @media (prefers-reduced-motion: reduce) {
-    .ember { animation: none; }
+    .ember {
+      animation: none;
+    }
   }
+
   .toggle {
     margin-top: 1rem;
     font: inherit;
@@ -100,179 +158,455 @@
     padding: 0 0 2px;
     cursor: pointer;
   }
-  .toggle:hover { color: var(--ink); }
-  .toggle:focus-visible { outline: 2px solid var(--marigold); outline-offset: 4px; }
+
+  .toggle:hover {
+    color: var(--ink);
+  }
+
+  .toggle:focus-visible {
+    outline: 2px solid var(--marigold);
+    outline-offset: 4px;
+  }
+
   .translation {
     margin-top: 1.5rem;
     color: var(--ink-soft);
     font-style: italic;
     font-size: 1rem;
   }
-  .translation[hidden] { display: none; }
+
+  .translation[hidden] {
+    display: none;
+  }
+
+  .translation h3 {
+    font-family: "Yatra One", "Literata", Georgia, serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin: 0 0 1rem;
+    color: var(--ink);
+  }
+
+  .translation p {
+    margin: 0 0 1.4rem;
+  }
+
+  .translation span {
+    display: block;
+  }
+
+  .translation .ember {
+    color: var(--marigold);
+  }
 </style>
 </head>
+
 <body>
+
 <main>
+
   <h1 class="collection-title">Lines of Stone</h1>
   <p class="subtitle">A collection of seven poems by Subham</p>
 
+
+  <!-- POEM 1 -->
   <article class="poem">
     <h2>Lines of Stone</h2>
+
     <div class="verse">
-      <p><span>The lines on my palms look like flowers,</span><span>yet not one has ever faded.</span></p>
-      <p><span>I have made my peace with them,</span><span>and still the laughter doesn't come.</span></p>
-      <p><span>How can lines as soft as petals</span><span>hold like something cut in stone?</span></p>
-      <p><span>The harder I tried to rub them out,</span><span>the deeper they were drawn.</span></p>
-      <p><span>God writes no one's fate gently.</span><span>He carves it into stone, then forgets the lines.</span></p>
-      <p class="closing"><span>And we, mistaking them for flowers,</span><span>spent our lives tracing them with our thumbs.</span><span>It was carved in stone,</span><span>and we kept trying to wash it away with tears.</span></p>
+      <p>
+        <span>The lines on my palms look like flowers,</span>
+        <span>yet not one has ever faded.</span>
+      </p>
+
+      <p>
+        <span>I have made my peace with them,</span>
+        <span>and still the laughter doesn't come.</span>
+      </p>
+
+      <p>
+        <span>How can lines as soft as petals</span>
+        <span>hold like something cut in stone?</span>
+      </p>
+
+      <p>
+        <span>The harder I tried to rub them out,</span>
+        <span>the deeper they were drawn.</span>
+      </p>
+
+      <p>
+        <span>God writes no one's fate gently.</span>
+        <span>He carves it into stone, then forgets the lines.</span>
+      </p>
+
+      <p class="closing">
+        <span>And we, mistaking them for flowers,</span>
+        <span>spent our lives tracing them with our thumbs.</span>
+        <span>It was carved in stone,</span>
+        <span>and we kept trying to wash it away with tears.</span>
+      </p>
     </div>
   </article>
+
+
+  <!-- POEM 2 -->
   <article class="poem">
     <h2>Ravan Dahan</h2>
+
     <div class="verse">
-      <p><span>Mehfil mein yun kho jaata hoon</span><span>Ki gham ka pata nahi chalta.</span><span>Par jab bujhte hain mehfil ke chiraag,</span><span>Gham ghar tak saath chalta hai.</span></p>
-      <p><span>Khuda ne kismat aisi likhi</span><span>Jise na hansi badal saki, na jaam.</span></p>
-      <p><span>Har saal mere shehar mein Ravan jalta hai,</span><span>Kaagaz ka, baans ka, patakhon se bhara.</span><span class="ember">Hey Ram, mera Ravan dahan kab hoga?</span></p>
+      <p>
+        <span>Mehfil mein yun kho jaata hoon</span>
+        <span>Ki gham ka pata nahi chalta.</span>
+        <span>Par jab bujhte hain mehfil ke chiraag,</span>
+        <span>Gham ghar tak saath chalta hai.</span>
+      </p>
+
+      <p>
+        <span>Khuda ne kismat aisi likhi</span>
+        <span>Jise na hansi badal saki, na jaam.</span>
+      </p>
+
+      <p>
+        <span>Har saal mere shehar mein Ravan jalta hai,</span>
+        <span>Kaagaz ka, baans ka, patakhon se bhara.</span>
+        <span class="ember">Hey Ram, mera Ravan dahan kab hoga?</span>
+      </p>
     </div>
-    <button class="toggle" aria-expanded="false" aria-controls="tr2">Read in English</button>
+
+    <button
+      class="toggle"
+      aria-expanded="false"
+      aria-controls="tr2"
+      type="button">
+      Read in English
+    </button>
+
     <div class="translation" id="tr2" hidden>
-      <p>I lose myself in the gathering so completely that I can't feel the sorrow. But when its lamps go out, the sorrow walks me home. God wrote a fate that neither laughter nor wine could change. Every year Ravan burns in my city, made of paper and bamboo, stuffed with firecrackers. O Ram, when will my Ravan burn?</p>
+      <p>
+        I lose myself in the gathering so completely that I can't feel the
+        sorrow. But when its lamps go out, the sorrow walks me home.
+        God wrote a fate that neither laughter nor wine could change.
+        Every year Ravan burns in my city, made of paper and bamboo,
+        stuffed with firecrackers. O Ram, when will my Ravan burn?
+      </p>
     </div>
   </article>
+
+
+  <!-- POEM 3 -->
   <article class="poem">
     <h2>Panno Mein Kismat</h2>
+
     <div class="verse">
-      <p><span>Huzoor, na poochiye.</span><span>Log kismat haathon ki lakeeron mein dhoondhte hain,</span><span>Main apni kismat panno par likhta hoon.</span></p>
-      <p><span>Ghalib bhi apni kismat ghazalon mein likh gaye,</span><span>Aur dekhiye, dedh sau saal baad bhi koi mita na saka.</span></p>
-      <p class="closing"><span>Khuda ne jannat banayi, jahannum bhi.</span><span>Yeh duniya dono mein se kuch nahi,</span><span>Bas ek daftar hai jahan uske kaagaz chalte hain.</span></p>
+      <p>
+        <span>Huzoor, na poochiye.</span>
+        <span>Log kismat haathon ki lakeeron mein dhoondhte hain,</span>
+        <span>Main apni kismat panno par likhta hoon.</span>
+      </p>
+
+      <p>
+        <span>Ghalib bhi apni kismat ghazalon mein likh gaye,</span>
+        <span>Aur dekhiye, dedh sau saal baad bhi koi mita na saka.</span>
+      </p>
+
+      <p class="closing">
+        <span>Khuda ne jannat banayi, jahannum bhi.</span>
+        <span>Yeh duniya dono mein se kuch nahi,</span>
+        <span>Bas ek daftar hai jahan uske kaagaz chalte hain.</span>
+      </p>
     </div>
-    <button class="toggle" aria-expanded="false" aria-controls="tr3">Read in English</button>
+
+    <button
+      class="toggle"
+      aria-expanded="false"
+      aria-controls="tr3"
+      type="button">
+      Read in English
+    </button>
+
     <div class="translation" id="tr3" hidden>
-      <p>Don't ask, sir. People look for fate in the lines of their hands; I write mine on pages. Ghalib, too, wrote his fate into his ghazals, and look, a century and a half later no one has erased it. God made heaven, and hell too. This world is neither, just an office where His paperwork runs.</p>
+      <p>
+        Don't ask, sir. People look for fate in the lines of their hands;
+        I write mine on pages. Ghalib, too, wrote his fate into his ghazals,
+        and look, a century and a half later no one has erased it.
+        God made heaven, and hell too. This world is neither,
+        just an office where His paperwork runs.
+      </p>
     </div>
   </article>
+
+
+  <!-- POEM 4 -->
   <article class="poem">
     <h2>Shayar ki Mehfil</h2>
+
     <div class="verse">
-      <p><span>Shayar ki mehfil mein badshah beech mein baitha hai,</span><span>Faqir kone mein, aur uske andar Khuda.</span><span>Mehfil madhosh hai, aur Khuda bhi sun raha hai,</span><span>Par badshah ke bagal waali kursi se.</span></p>
-      <p><span>Faqir mandir se masjid bhatakta raha,</span><span>Yeh jaane bina ki har jagah Khuda ki hi mehfil thi.</span><span>Aakhir usne apne hi andar pukaara, aur jawab mila.</span></p>
-      <p class="closing"><span>Do darbari shayaron ne chaandi ke sikkon ke badle</span><span>Khuda ki hukumat bech di,</span><span>Aur raja maan baitha ki duniya uski hai.</span></p>
+      <p>
+        <span>Shayar ki mehfil mein badshah beech mein baitha hai,</span>
+        <span>Faqir kone mein, aur uske andar Khuda.</span>
+        <span>Mehfil madhosh hai, aur Khuda bhi sun raha hai,</span>
+        <span>Par badshah ke bagal waali kursi se.</span>
+      </p>
+
+      <p>
+        <span>Faqir mandir se masjid bhatakta raha,</span>
+        <span>Yeh jaane bina ki har jagah Khuda ki hi mehfil thi.</span>
+        <span>Aakhir usne apne hi andar pukaara, aur jawab mila.</span>
+      </p>
+
+      <p class="closing">
+        <span>Do darbari shayaron ne chaandi ke sikkon ke badle</span>
+        <span>Khuda ki hukumat bech di,</span>
+        <span>Aur raja maan baitha ki duniya uski hai.</span>
+      </p>
     </div>
-    <button class="toggle" aria-expanded="false" aria-controls="tr4">Read in English</button>
+
+    <button
+      class="toggle"
+      aria-expanded="false"
+      aria-controls="tr4"
+      type="button">
+      Read in English
+    </button>
+
     <div class="translation" id="tr4" hidden>
-      <p>In the poet's gathering the king sits at the center, the faqir in the corner, and God inside him. The gathering is lost in rapture, and God is listening too, from the seat beside the king. The faqir wandered from temple to mosque, never knowing every place was God's gathering. At last he called out within himself, and was answered. Two court poets sold God's rule for silver coins, and the king came to believe the world was his.</p>
+      <p>
+        In the poet's gathering the king sits at the center, the faqir in the
+        corner, and God inside him. The gathering is lost in rapture, and God
+        is listening too, from the seat beside the king. The faqir wandered
+        from temple to mosque, never knowing every place was God's gathering.
+        At last he called out within himself, and was answered.
+        Two court poets sold God's rule for silver coins, and the king came
+        to believe the world was his.
+      </p>
     </div>
   </article>
+
+
+  <!-- POEM 5 -->
   <article class="poem">
     <h2>Naqsh</h2>
+
     <div class="verse">
-      <p><span>Jab rekha se rekha milti hai,</span><span>Tab naqsh banta hai.</span><span>Yeh baat pir, muni, sadhu, sant,</span><span>Kisko nahi pata?</span></p>
-      <p><span>Par kalakar jo naqsh apni rooh ka banata hai,</span><span>Use rooh banane wala bhi nahi jaanta.</span></p>
-      <p><span>Badshah hukm likhte hain, kalakar lakeerein.</span><span>Hukm mit jaate hain, lakeerein rehti hain.</span></p>
-      <p><span>Insaan apni khushi aur dukh se</span><span>Rekha se rekha jodta hai.</span><span>Ismein Khuda ka kya kaam?</span></p>
-      <p><span>Usne patthar pe likha hoga.</span><span class="ember">Main apni hatheli khud likhta hoon.</span></p>
+      <p>
+        <span>Jab rekha se rekha milti hai,</span>
+        <span>Tab naqsh banta hai.</span>
+        <span>Yeh baat pir, muni, sadhu, sant,</span>
+        <span>Kisko nahi pata?</span>
+      </p>
+
+      <p>
+        <span>Par kalakar jo naqsh apni rooh ka banata hai,</span>
+        <span>Use rooh banane wala bhi nahi jaanta.</span>
+      </p>
+
+      <p>
+        <span>Badshah hukm likhte hain, kalakar lakeerein.</span>
+        <span>Hukm mit jaate hain, lakeerein rehti hain.</span>
+      </p>
+
+      <p>
+        <span>Insaan apni khushi aur dukh se</span>
+        <span>Rekha se rekha jodta hai.</span>
+        <span>Ismein Khuda ka kya kaam?</span>
+      </p>
+
+      <p>
+        <span>Usne patthar pe likha hoga.</span>
+        <span class="ember">Main apni hatheli khud likhta hoon.</span>
+      </p>
     </div>
-    <button class="toggle" aria-expanded="false" aria-controls="tr5">Read in English</button>
+
+    <button
+      class="toggle"
+      aria-expanded="false"
+      aria-controls="tr5"
+      type="button">
+      Read in English
+    </button>
+
     <div class="translation" id="tr5" hidden>
-      <p>When line meets line, a design is born. What pir, sage, sadhu or saint doesn't know that? But the design an artist makes of his own soul, not even the soul&rsquo;s maker knows. Kings write decrees, artists write lines. Decrees fade; lines remain. A human joins line to line out of his own joy and sorrow. What part does God have in that? He may have written on stone. I write my own palm.</p>
+      <p>
+        When line meets line, a design is born. What pir, sage, sadhu or saint
+        doesn't know that? But the design an artist makes of his own soul,
+        not even the soul's maker knows. Kings write decrees, artists write
+        lines. Decrees fade; lines remain. A human joins line to line out of
+        his own joy and sorrow. What part does God have in that? He may have
+        written on stone. I write my own palm.
+      </p>
     </div>
   </article>
+
+
+  <!-- POEM 6 -->
   <article class="poem">
     <h2>Shunyata</h2>
+
     <div class="verse">
-      <p><span>Kabir ne Kabiriyat dikhayi,</span><span>Kabir ne Kabiriyat dikhayi:</span><span>Dilon mein basta Ishwar ka saar.</span></p>
-      <p><span>Buddha ne Buddhatva dikhaya,</span><span>Buddha ne Buddhatva dikhaya:</span><span>Ishwar bhi moh-maya ka shikaar.</span></p>
-      <p><span>Khud ko poojna, khud se dhokha,</span><span>Is sansaar mein &ldquo;khud&rdquo; ka nahi koi aakaar.</span></p>
-      <p><span>Dono ne dil ki baat kahi,</span><span>Dono ne dil ki baat kahi:</span><span>Khud, maa, Ishwar, devta saare,</span><span>Apni-apni moh-maya ke taar,</span><span>Jab tak saans hai, jeene ka aadhaar.</span></p>
-      <p><span>Nagarjuna ne shunyata dikhayi,</span><span>Nagarjuna ne shunyata dikhayi:</span><span>Jab mera apna koi saar nahi,</span><span>Toh sansaar mein qaid hai kaun?</span></p>
-      <p><span>Sab tyaag kar moksh maange jo,</span><span class="ember">Woh maangne wala &ldquo;main&rdquo; hai kaun?</span></p>
+      <p>
+        <span>Kabir ne Kabiriyat dikhayi,</span>
+        <span>Kabir ne Kabiriyat dikhayi:</span>
+        <span>Dilon mein basta Ishwar ka saar.</span>
+      </p>
+
+      <p>
+        <span>Buddha ne Buddhatva dikhaya,</span>
+        <span>Buddha ne Buddhatva dikhaya:</span>
+        <span>Ishwar bhi moh-maya ka shikaar.</span>
+      </p>
+
+      <p>
+        <span>Khud ko poojna, khud se dhokha,</span>
+        <span>Is sansaar mein "khud" ka nahi koi aakaar.</span>
+      </p>
+
+      <p>
+        <span>Dono ne dil ki baat kahi,</span>
+        <span>Dono ne dil ki baat kahi:</span>
+        <span>Khud, maa, Ishwar, devta saare,</span>
+        <span>Apni-apni moh-maya ke taar,</span>
+        <span>Jab tak saans hai, jeene ka aadhaar.</span>
+      </p>
+
+      <p>
+        <span>Nagarjuna ne shunyata dikhayi,</span>
+        <span>Nagarjuna ne shunyata dikhayi:</span>
+        <span>Jab mera apna koi saar nahi,</span>
+        <span>Toh sansaar mein qaid hai kaun?</span>
+      </p>
+
+      <p>
+        <span>Sab tyaag kar moksh maange jo,</span>
+        <span class="ember">Woh maangne wala "main" hai kaun?</span>
+      </p>
     </div>
-    <button class="toggle" aria-expanded="false" aria-controls="tr6">Read in English</button>
+
+    <button
+      class="toggle"
+      aria-expanded="false"
+      aria-controls="tr6"
+      type="button">
+      Read in English
+    </button>
+
     <div class="translation" id="tr6" hidden>
-      <p>Kabir showed the way of Kabir: the essence of God lives in our hearts. Buddha showed the way of awakening: even God is caught in attachment and illusion. To worship the self is to deceive the self; in this world, the &ldquo;self&rdquo; has no form. Both spoke from the heart: self, mother, God, all the gods, each is a thread of its own attachment and illusion, and as long as there is breath, they are what we live by. Nagarjuna showed emptiness: if I have no essence of my own, then who is imprisoned in this world? The one who gives up everything and asks for liberation, who is this &ldquo;I&rdquo; that asks?</p>
+      <p>
+        Kabir showed the way of Kabir: the essence of God lives in our hearts.
+        Buddha showed the way of awakening: even God is caught in attachment
+        and illusion. To worship the self is to deceive the self; in this
+        world, the "self" has no form. Both spoke from the heart: self, mother,
+        God, all the gods, each is a thread of its own attachment and illusion,
+        and as long as there is breath, they are what we live by.
+        Nagarjuna showed emptiness: if I have no essence of my own,
+        then who is imprisoned in this world? The one who gives up everything
+        and asks for liberation, who is this "I" that asks?
+      </p>
     </div>
   </article>
-  <section class="poem">
-  <h2>Andha Mulk</h2>
 
-  <div class="verse">
-    <p>
-      <span>Raja andha tha. Yeh koi khabar nahi,</span>
-      <span>Dhritarashtra bhi tha.</span>
-    </p>
 
-    <p>
-      <span>Khabar yeh hai ki Gandhari ne patti</span>
-      <span>mohabbat mein baandhi thi,</span>
-      <span>darbar ne tankhwah mein.</span>
-    </p>
+  <!-- POEM 7 -->
+  <article class="poem">
+    <h2>Andha Mulk</h2>
 
-    <p>
-      <span>Fauj ne jo kiya, sabne suna.</span>
-      <span>Dekha kisi ne nahi.</span>
-    </p>
+    <div class="verse">
+      <p>
+        <span>Raja andha tha. Yeh koi khabar nahi,</span>
+        <span>Dhritarashtra bhi tha.</span>
+      </p>
 
-    <p>
-      <span>Ek bachche ne poocha, ghulam kaun hai?</span>
-      <span>Is baar Khuda ne jawab diya:</span>
-      <span>Jo galat ko galat na keh sake.</span>
-    </p>
+      <p>
+        <span>Khabar yeh hai ki Gandhari ne patti</span>
+        <span>mohabbat mein baandhi thi,</span>
+        <span>darbar ne tankhwah mein.</span>
+      </p>
 
-    <p>
-      <span>Bachche ne darbar ki taraf dekha,</span>
-      <span>phir takht ki taraf.</span>
-      <span>Is hisaab se, usne kaha,</span>
-      <span class="ember">yahan azaad toh koi nahi.</span>
-    </p>
-  </div>
+      <p>
+        <span>Fauj ne jo kiya, sabne suna.</span>
+        <span>Dekha kisi ne nahi.</span>
+      </p>
 
-  <div class="translation">
-    <h3>English Translation</h3>
+      <p>
+        <span>Ek bachche ne poocha, ghulam kaun hai?</span>
+        <span>Is baar Khuda ne jawab diya:</span>
+        <span>Jo galat ko galat na keh sake.</span>
+      </p>
 
-    <p>
-      <span>The king was blind. That isn't news;</span>
-      <span>Dhritarashtra was blind too.</span>
-    </p>
+      <p>
+        <span>Bachche ne darbar ki taraf dekha,</span>
+        <span>phir takht ki taraf.</span>
+        <span>Is hisaab se, usne kaha,</span>
+        <span class="ember">yahan azaad toh koi nahi.</span>
+      </p>
+    </div>
 
-    <p>
-      <span>The news is that Gandhari tied her blindfold</span>
-      <span>out of love,</span>
-      <span>while the court tied theirs for a salary.</span>
-    </p>
+    <button
+      class="toggle"
+      aria-expanded="false"
+      aria-controls="tr7"
+      type="button">
+      Read in English
+    </button>
 
-    <p>
-      <span>Everyone heard what the army did.</span>
-      <span>No one saw it.</span>
-    </p>
+    <div class="translation" id="tr7" hidden>
+      <h3>English Translation</h3>
 
-    <p>
-      <span>A child asked, “Who is a slave?”</span>
-      <span>This time, God answered:</span>
-      <span>“One who cannot call wrong, wrong.”</span>
-    </p>
+      <p>
+        <span>The king was blind. That isn't news;</span>
+        <span>Dhritarashtra was blind too.</span>
+      </p>
 
-    <p>
-      <span>The child looked toward the court,</span>
-      <span>then toward the throne.</span>
-      <span>By that measure, he said,</span>
-      <span class="ember">“No one here is free.”</span>
-    </p>
-  </div>
-</section>
+      <p>
+        <span>The news is that Gandhari tied her blindfold</span>
+        <span>out of love,</span>
+        <span>while the court tied theirs for a salary.</span>
+      </p>
 
-    
+      <p>
+        <span>Everyone heard what the army did.</span>
+        <span>No one saw it.</span>
+      </p>
+
+      <p>
+        <span>A child asked, "Who is a slave?"</span>
+        <span>This time, God answered:</span>
+        <span>"One who cannot call wrong, wrong."</span>
+      </p>
+
+      <p>
+        <span>The child looked toward the court,</span>
+        <span>then toward the throne.</span>
+        <span>By that measure, he said,</span>
+        <span class="ember">"No one here is free."</span>
+      </p>
+    </div>
   </article>
+
 </main>
+
+
 <script>
-  document.querySelectorAll('.toggle').forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      var panel = document.getElementById(btn.getAttribute('aria-controls'));
-      var open = btn.getAttribute('aria-expanded') === 'true';
+  document.querySelectorAll(".toggle").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var panel = document.getElementById(
+        btn.getAttribute("aria-controls")
+      );
+
+      var open = btn.getAttribute("aria-expanded") === "true";
+
       panel.hidden = open;
-      btn.setAttribute('aria-expanded', String(!open));
-      btn.textContent = open ? 'Read in English' : 'Hide English';
+
+      btn.setAttribute(
+        "aria-expanded",
+        String(!open)
+      );
+
+      btn.textContent = open
+        ? "Read in English"
+        : "Hide English";
     });
   });
 </script>
+
 </body>
 </html>
