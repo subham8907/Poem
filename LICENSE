@@ -1,0 +1,81 @@
+Copyright (c) 2026 Subham Mahesh
+
+This repository contains literary works (poems and song lyrics) together with
+audio, music and other media. Different parts are licensed differently, as
+described below.
+
+======================================================================
+1. TEXTUAL CONTENT — Creative Commons Attribution-NonCommercial 4.0
+======================================================================
+
+All textual content in this repository is licensed under the Creative Commons
+Attribution-NonCommercial 4.0 International License (CC BY-NC 4.0).
+
+"Textual content" means the written words of the works, including:
+
+  - the poems in the collection "Lines of Stone" (index.html);
+  - the lyrics of the song "Kaayar Ishq Ma" (song.html), and the lyrics of
+    any other song published here, as written words;
+  - titles, subtitles, notes and any other prose or verse written by the
+    author.
+
+The lyrics of a song are covered by this license even though the song's
+music and vocal recording are not (see section 2).
+
+You are free to:
+
+  - Share — copy and redistribute the textual content in any medium or format;
+  - Adapt — remix, transform, translate and build upon the textual content.
+
+Under the following terms:
+
+  - Attribution — You must give appropriate credit to "Subham Mahesh", provide
+    a link to the license, and indicate if changes were made. You may do so in
+    any reasonable manner, but not in any way that suggests the author
+    endorses you or your use.
+  - NonCommercial — You may not use the textual content for commercial
+    purposes.
+  - No additional restrictions — You may not apply legal terms or
+    technological measures that legally restrict others from doing anything
+    the license permits.
+
+Full license text: https://creativecommons.org/licenses/by-nc/4.0/legalcode
+Summary:           https://creativecommons.org/licenses/by-nc/4.0/
+
+Suggested attribution:
+  "<Title>" by Subham Mahesh, licensed under CC BY-NC 4.0
+  (https://creativecommons.org/licenses/by-nc/4.0/)
+
+======================================================================
+2. VOICE AND MUSIC — All Rights Reserved
+======================================================================
+
+The following are NOT licensed under CC BY-NC 4.0 or any other open license.
+All rights are reserved by their respective rights holders:
+
+  - all music, including melodies, compositions, arrangements, beats and
+    instrumental parts;
+  - all voice, including vocal performances, singing, spoken recitations and
+    any recording of a person's voice;
+  - all sound recordings and audio/video files containing voice or music,
+    including song.mp4.
+
+No permission is granted to copy, distribute, perform, remix, sample, use for
+training or synthesis (including voice cloning), or otherwise use the voice or
+music without prior written permission from the rights holder(s).
+
+Creating your own new musical setting or recording of the lyrics is permitted
+under section 1 (non-commercially, with attribution), provided it does not
+copy, sample or imitate the original music or voice recordings.
+
+======================================================================
+3. EVERYTHING ELSE
+======================================================================
+
+Anything not described as textual content in section 1 — including images
+(such as song-poster.jpg) and the website's HTML/CSS/JavaScript code — is not
+covered by the CC BY-NC 4.0 grant and remains All Rights Reserved unless
+stated otherwise.
+
+For permissions beyond the scope of this license, including commercial use,
+contact the author through https://github.com/subham8907.
